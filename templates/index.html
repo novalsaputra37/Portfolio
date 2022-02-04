@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Dzikri Noval Saputra</title>
+    {% include 'snippets/styles.html' %}
+</head>
+<body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
+    {% include 'header/header.html' %}
+    <main class="main-page-wrapper">
+        {% include 'slider/slider.html' %}
+
+        {% include 'service/service.html' %}
+
+        {% include 'portfolio/portfolio.html' %}
+
+        {% include 'resume/resume.html' %}
+
+        {% include  'client/client.html'%}
+
+        {% include  'contact/contact.html'%}
+
+        {% include  'modal/modal-portfolio.html'%}
+
+        <!-- Back to  top Start -->
+        <div class="backto-top">
+            <div>
+                <i data-feather="arrow-up"></i>
+            </div>
+        </div>
+        <!-- Back to top end -->
+    </main>
+    {% include 'footer/footer.html' %}
+
+    {% include 'snippets/script.html' %}
+
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("white-version");
+            var x = document.getElementById("toggle-text");
+            if (x.innerHTML === "Light Mode") {
+              x.innerHTML = "Dark Mode";
+            } else {
+              x.innerHTML = "Light Mode";
+            }
+          }
+    </script>
+
+</body>
+</html>
