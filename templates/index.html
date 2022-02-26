@@ -8,8 +8,11 @@
     {% include 'snippets/styles.html' %}
 </head>
 <body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
+
     {% include 'header/header.html' %}
+
     <main class="main-page-wrapper">
+        
         {% include 'slider/slider.html' %}
 
         {% include 'service/service.html' %}
@@ -35,6 +38,12 @@
     {% include 'footer/footer.html' %}
 
     {% include 'snippets/script.html' %}
+
+    <script type="text/javascript">
+        $(".alert").delay(5000).slideUp(200, function () {
+            $(this).alert('close');
+        });
+    </script>
 
     <script>
         function myFunction() {

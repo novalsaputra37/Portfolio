@@ -1,9 +1,9 @@
-from django.shortcuts import render
-from django.urls import reverse
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView
+from django.contrib import messages
 
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -23,14 +23,21 @@ class IndexView(TemplateView):
             subject = self.request.POST.get('subject')
             message = self.request.POST.get('contact-message')
 
-            print(name, phone, email, subject, message)
+            # print(name, phone, email, subject, message)
+            message = "From : " + name + "\nEmail : " + email +"\nPhone : " + phone + "\nMessage : \n" + message
 
-            send_mail(
-                subject,
-                message,
-                'gatotkacanetwork@gmail.com',
-                ['novalsaputra37@gmail.com'],
-            )
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    'gatotkacakost@gatotkaca-network.com',
+                    ['novalsaputra37@gmail.com'],
+                )
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            messages.success(request, "message sent successfully :) " )
+            return redirect ("index")
+            
 
         return render(request, self.template_name)
 

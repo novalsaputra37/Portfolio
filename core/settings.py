@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +25,14 @@ SECRET_KEY = 'django-insecure-j!-(f76bvbh^20pow*$s#%=xq=@3ohqkgds2khwr1r=sawa^-q
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-danger',
+ }
 
 ALLOWED_HOSTS = ['*']
 
@@ -115,11 +124,11 @@ USE_L10N = True
 USE_TZ = True
 
 #email
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = "majora.id.domainesia.com."
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "gatotkacanetwork@gmail.com"
-EMAIL_HOST_PASSWORD = "qenpvswzcdieykng"
+EMAIL_HOST_USER = "gatotkacakost@gatotkaca-network.com"
+EMAIL_HOST_PASSWORD = "KOnoha122#"
 
 
 # Static files (CSS, JavaScript, Images)
