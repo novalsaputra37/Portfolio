@@ -40,16 +40,3 @@ class IndexView(TemplateView):
             
 
         return render(request, self.template_name)
-
-# def send_mail(request):
-#     if request.method == "POST":
-#         name = request.POST.get('contact-name')
-#         phone = request.POST.get('contact-phone')
-#         email = request.POST.get('contact-email')
-#         subject = request.POST.get('subject')
-#         message = request.POST.get('contact-message')
-#         print(name, phone, email, subject, message)
-
-#         return HttpResponseRedirect(reverse('index'))
-#     else:
-#         return HttpResponse('Invalid request')
